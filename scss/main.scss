@@ -1,0 +1,168 @@
+$blue: #223c68;
+$lightblue: #66b6b2;
+
+* {
+  padding: -0;
+  margin: 0;
+  //   border: 1px solid #f00;
+  box-sizing: border-box;
+  color: #fff;
+}
+// 天空
+.sky-wrap {
+  position: relative;
+  z-index: 1;
+
+}
+.star-wrap{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  
+}
+.stars {
+position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  // overflow-x: hidden;
+  // overflow-y: auto;
+  perspective: 1px;
+  perspective-origin: 0% 0%;
+  transform-style: preserve-3d;
+  // height: 100vh;
+  
+  z-index: -1;
+  
+}
+
+// 星星
+@mixin starsize($w,$h:$w) {
+  width: $w*1.2;
+  height: $h*1.2;
+  &:before,
+  &:after {
+    content: "";
+    width: 100%;
+    height: 0;
+    width: 0;
+    height: 0;
+    // border-width: 0 $w/2 $w*1.73/2  $w/2;
+    // border-color: transparent transparent #fff transparent;
+    position: absolute;
+  }
+  &:after {
+    top: $w*1.73/2;
+    transform: translateY(-$w*1.73/4);
+    border-width: $w*1.73/2 $w/2 0 $w/2;
+    border-color: #fff transparent transparent transparent;
+  }
+}
+.skybg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, $blue, $lightblue);
+  z-index: -2;
+}
+.star {
+  position: absolute;
+  background-size: contain;
+  background-image: url("../img/star.svg");
+  background-repeat: no-repeat;
+}
+
+@for $i from 1 through 80 {
+  .star#{$i} {
+    @include starsize(random(2)+10px);
+    top: random(300)*1%;
+    left: random(300)*1%;
+    opacity: random(8)*0.1;
+    transform: translateZ(random(3)* -1px) scale(random(3));
+  }
+}
+
+.mainpage {
+  position: relative;
+}
+.container {
+  max-width: 768px;
+  // border: 1px solid #f00;
+  margin: 0 auto;
+  padding: 20px;
+}
+.logo {
+  padding: 10vh 0 0;
+  max-width: 60%;
+  transform: translate(50%, 0, -1px) scale(2);
+}
+.m-auto {
+  margin: 0 auto;
+  display: block;
+}
+img {
+  width: 100%;
+}
+.boy img {
+  max-width: 30%;
+  transform: translate(50%, 0, -2px) scale(2);
+}
+.text-center {
+  text-align: center;
+}
+h3 {
+  margin-bottom: 1rem;
+}
+p {
+  line-height: 180%;
+  letter-spacing: 1px;
+}
+.p-3 {
+  padding: 1rem;
+}
+
+.test {
+  padding: 10vh 0;
+}
+.clouds {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 10vw;
+  .cloud {
+    // display: inline-block;
+    max-width: 30vw;
+  }
+}
+.land {
+  position: relative;
+  z-index: 0;
+  
+  &>div{
+    width: 100%;
+   
+    &:nth-child(2){
+   margin-top: -40%;
+    background: #BED553;
+    }
+    
+  }
+  .tree{
+    position: absolute;
+    bottom: -6px;
+  }
+}
+
+
+// 第二區塊
+
+.focus{
+    padding: 20px;
+    z-index: 3;
+    background-color: #9AB81B;
+}
