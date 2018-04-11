@@ -1,6 +1,7 @@
 $blue: #223c68;
 $lightblue: #66b6b2;
 
+
 * {
   padding: -0;
   margin: 0;
@@ -99,6 +100,9 @@ img{
   // border: 1px solid #f00;
   margin: 0 auto;
   padding: 20px;
+  &.container-big{
+    max-width: 960px;
+  }
 }
 .logo {
   padding: 40vh 0 60vh;
@@ -154,12 +158,20 @@ p {
 //  background-color: #9AB81B;
   padding-bottom: 56%;
   background-image: url('../img/forestBg.png');
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
-}
-.text-block{
-  padding-top: 30vh;
+  background-position:center;
   
+}
+.dad{
+    max-width: 20%;
+    // width: 20%;
+    position: absolute;
+    bottom: calc(16.7%) ;
+    right: 18%;
+  }
+.text-block{
+  padding-top: 30vh;  
 }
 
 .fruits{
@@ -177,4 +189,53 @@ p {
   background-image: url('../img/wood.png');
   background-size: 100%;
   background-repeat: no-repeat;
+}
+.bg3{
+  margin-top: 50%;
+}
+
+.bg3{
+  padding-top: 56%;
+  background-image:url('../img/bg3.png');
+  background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   position: relative;
+   z-index: 1;
+   .textblock{
+     position: absolute;
+     left: 50%;
+     top: 50%;
+     transform: translate(-50%,-50%);
+   }
+}
+.product_block{
+  background-color: #fff;
+  width: 100%;
+  overflow: auto;
+  position: relative;
+  z-index: 0;
+  padding-top: 40vh;
+  h3{
+    color:#333;
+  }
+  p{
+ color:#999;
+  }
+ 
+}
+.d-flex{
+  display: flex;
+  flex-wrap: wrap;
+  // justify-content: center;
+  align-items: center;
+}
+.col-6{
+  // float: left;
+  // width: calc(100% / 2 - 20px);
+  flex:1;
+  margin:10px;
+  // border: 1px solid #f00;
+  padding: 20px;
+  box-sizing: border-box;
 }
