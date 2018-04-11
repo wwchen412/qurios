@@ -83,6 +83,7 @@ img{
 
 .parallax--1{
   transform: translateX(-10px) translateZ(-1px) scale(2);
+  transform-origin: 50% 50%;
 }
 .parallax--2{
   transform:  translateX(-15px) translateZ(-2px) scale(3);
@@ -215,14 +216,30 @@ p {
   overflow: auto;
   position: relative;
   z-index: 0;
-  padding-top: 40vh;
+  margin-top: -25vh;
+  padding: 30vh 0 50px;
   h3{
     color:#333;
   }
   p{
  color:#999;
   }
- 
+  .container-big{
+    position: relative;
+    &:after{
+      content: '';
+      display: block;
+      width: 50px;
+      height: 3px;
+      background-color: #2796D4;
+      border-radius: 3px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+      bottom: 0;
+    }
+  }
 }
 .d-flex{
   display: flex;
@@ -231,11 +248,43 @@ p {
   align-items: center;
 }
 .col-6{
-  // float: left;
-  // width: calc(100% / 2 - 20px);
   flex:1;
   margin:10px;
-  // border: 1px solid #f00;
   padding: 20px;
   box-sizing: border-box;
+}
+.line-btn{
+  max-width: 200px;
+  margin: 50px auto;
+}
+
+footer{
+  margin-top: -50px;
+  padding: 50px 0 0;
+  position: relative;
+  z-index: 100;
+  transform: translateZ(0px);
+  background-image: url('../img/wave.png');
+  .footer-logo{
+    max-width: 250px;
+    margin: auto;
+  }
+  ul{
+    margin-top: 15px;
+    text-align: center;
+  }
+  li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    a{
+       text-decoration: none;
+    }
+   
+  }
+  .copyright{
+    margin-top: 20px;
+    padding: 10px 0;
+    background-color: #223C68;
+  }
 }
