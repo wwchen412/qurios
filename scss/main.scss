@@ -113,8 +113,8 @@ img {
 .parallax--3 {
   transform: translateX(-15px) translateZ(-3px) scale(4);
 }
-.parallax--6 {
-  transform: translateX(-15px) translateZ(-6px) scale(7);
+.parallax--5 {
+  transform: translateX(-15px) translateZ(-5px) scale(6);
   z-index: 100;
   position: relative;
 }
@@ -263,10 +263,10 @@ p {
   }
 }
 .items-animate{
-  animation: moveItem 14s linear infinite;
+  animation: moveItem 18s linear infinite;
 }
 .items-animate-2{
-  animation: moveItem 14s  7s linear infinite;
+  animation: moveItem 18s  9s linear infinite;
 }
 @keyframes moveItem{
   0%{
@@ -353,3 +353,24 @@ footer {
     background-color: #223c68;
   }
 }
+.animate_boy{
+  position: absolute;
+  top: 20%;
+  right: 20%;
+  max-width: 220px;
+  transition: 3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transform: translate(300%,-150px);
+  
+}
+
+.animate_boy_left{
+  position: absolute;
+  bottom: 30%;
+  left: 10%;
+  max-width:220px;
+  transition: 3s 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transform: translate(-300%,-150px);
+}
+.flyIn{
+    transform: translate(0);
+  }

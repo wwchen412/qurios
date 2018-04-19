@@ -224,7 +224,7 @@
                     <img src="img/mainLogo.svg" alt="">
                    
                 </div>
-                <div class="container parallax--6">
+                <div class="container parallax--5">
                     <div class="boy" style="text-align:right">
                         <img src="img/kid_right.gif" alt="">
                     </div>
@@ -277,6 +277,12 @@
                                 <img src="img/health.png" alt="">
                             </div>
                         </div>
+                        <div class="animate_boy">
+                            <img src="img/kid_right.gif" alt="">
+                        </div>
+                    </div>
+                    <div class="animate_boy_left">
+                        <img src="img/kid_left.gif" alt="">
                     </div>
                     <div class="board text-center container">
                         <h3>我們的堅持</h3>
@@ -341,6 +347,9 @@
                        <p>用最適合兒童的方式，長期守護寶貝的健康</p>
                        <p>「每天一點點，配合孩子的生活飲食，給您剛剛好的補充」</p>
                    </div>
+                <div class="animate_boy">
+                    <img src="img/kid_right.gif" alt="">
+                </div>
                 </div>
                 <div class="product_block">
                      <div class="container-big container d-flex">
@@ -414,6 +423,27 @@
             
           
     </div>
+    <!-- jQuery JS 1.12.4 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript">
+       $(function(){
+           var starWrap = $('.star-wrap');
+           var window_31 = $(window).height() / 3;
+           console.log(window_31);
+           starWrap.scroll(function(){
+               
+               if ($('.forestbg').offset().top <= window_31){
+                   $('.animate_boy').eq(0).addClass('flyIn');
+               }  
+               if($('.bg3').offset().top <= window_31){
+                    $('.animate_boy').eq(1).addClass('flyIn');
+               }
+               if($('.forestbg').offset().top <= -200){
+                   $('.animate_boy_left').addClass('flyIn');
+               }
+           })
+       })
+    </script>
 </body>
 
 </html>
