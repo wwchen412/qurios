@@ -78,8 +78,16 @@ img {
   background-repeat: no-repeat;
   z-index: -1;
   transform-style: preserve-3d;
+  animation:shining_stars 6s alternate infinite cubic-bezier(0.215, 0.610, 0.355, 1);
 }
-
+@keyframes shining_stars{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
 @for $i from 1 through 200 {
   .star#{$i} {
     @include starsize(random(3) + 15px);
@@ -87,6 +95,15 @@ img {
     left: random(300) - 100%;
     opacity: random(8) * 0.1;
     transform: translateZ(random(5) * -1px) scale(random(3));
+    animation-delay: $i * 0.25s;
+    
+  }
+}
+@for $i from 100 through 200{
+  .star#{$i}{
+    @include range-width(320px,768px){
+      display: none;
+    }
   }
 }
 .planet{
@@ -103,9 +120,13 @@ img {
     max-width: 100px;
   }
 }
+
 .parallax--1 {
   transform: translateX(-10px) translateZ(-1px) scale(2);
   transform-origin: 50% 50%;
+  @include range-width(320px,768px){
+    transform: translateX(0px) translateZ(-1px) scale(2);
+  }
 }
 .parallax--2 {
   transform: translateX(-15px) translateZ(-2px) scale(3);
@@ -131,6 +152,9 @@ img {
   padding: 40vh 0 60vh;
   max-width: 300px;
   transform: translate(50%, 0, -1px) scale(2);
+  @include range-width(320px,768px){
+    padding: 30vh 0;
+  }
 }
 .m-auto {
   margin: 0 auto;
@@ -138,6 +162,11 @@ img {
 }
 img {
   width: 100%;
+}
+.boy{
+  @include range-width(320px,768px){
+    margin-top: 40vh;
+  }
 }
 .boy img {
   max-width: 30%;
@@ -184,6 +213,11 @@ p {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  @include range-width(320px,768px ){
+    background-size: 100% 100%;
+      background-image: url("../img/forest_m.png");
+     
+  }
 }
 .dad {
   max-width: 20%;
@@ -209,8 +243,13 @@ p {
   margin-top: 400px;
   padding: 120px 50px;
   background-image: url("../img/wood.png");
-  background-size: 100%;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
+  @include range-width(320px,768px){
+    padding:20px;
+    margin: 200px 0 200px;
+   
+  }
 }
 .bg3 {
   margin-top: 35%;
@@ -224,6 +263,10 @@ p {
   background-position: center;
   position: relative;
   z-index: 1;
+  @include range-width(320px,768px){
+    padding-top:140%;
+    margin-top: 100%; 
+  }
   .textblock {
     position: absolute;
     left: 50%;
@@ -312,6 +355,9 @@ p {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  @include range-width(320px,768px){
+    flex-direction: column;
+  }
 }
 .col-6 {
   flex: 1;
@@ -360,7 +406,10 @@ footer {
   max-width: 220px;
   transition: 3s cubic-bezier(0.075, 0.82, 0.165, 1);
   transform: translate(300%,-150px);
-  
+  @include range-width(320px,768px ){
+    max-width: 112px;
+    right: 10px;
+  }
 }
 
 .animate_boy_left{
@@ -370,7 +419,18 @@ footer {
   max-width:220px;
   transition: 3s 1s cubic-bezier(0.075, 0.82, 0.165, 1);
   transform: translate(-300%,-150px);
+   @include range-width(320px,768px ){
+    max-width: 112px;
+    left: 10px; 
+    bottom: 300px;
+  }
 }
 .flyIn{
     transform: translate(0);
+  }
+  .d-mobile_none{
+    @include range-width(320px,768px ){
+      display: none;
+    }
+    
   }
