@@ -1,6 +1,7 @@
+// colors
 $blue: #223c68;
 $lightblue: #66b6b2;
-
+// rwd media query
 @mixin range-width($min: 0, $max: 0) {
   @if $max==0 {
     @media screen and (min-width: $min) {
@@ -12,7 +13,7 @@ $lightblue: #66b6b2;
     }
   }
 }
-
+// basic setting
 * {
   padding: -0;
   margin: 0;
@@ -24,7 +25,7 @@ img {
   z-index: 0;
 }
 
-// 天空
+// skybg
 
 .star-wrap {
   // position: absolute;
@@ -46,9 +47,9 @@ img {
   overflow-y: auto;
   perspective: 1px;
 }
-// 星星們
+// stars
 
-// 星星
+// star mixin
 @mixin starsize($w, $h: $w) {
   width: $w * 1.2;
   height: $h * 1.2;
@@ -88,6 +89,7 @@ img {
     opacity: 1;
   }
 }
+// stars loop
 @for $i from 1 through 200 {
   .star#{$i} {
     @include starsize(random(3) + 15px);
@@ -106,6 +108,7 @@ img {
     }
   }
 }
+// parallex setting
 .planet{
   position: absolute;
   top: 100%;
